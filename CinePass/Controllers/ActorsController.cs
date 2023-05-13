@@ -31,20 +31,23 @@ namespace CinePass.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")] Actor actor)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(actor);
+            }
+            _service.Add(actor);
+            //await _service.AddAsync(actor);
+            return RedirectToAction(nameof(Index));
+        }
     }
     //[AllowAnonymous]
 
 
-    //[HttpPost]
-    //public async Task<IActionResult> Create([Bind("FullName,ProfilePictureURL,Bio")] Actor actor)
-    //{
-    //    if (!ModelState.IsValid)
-    //    {
-    //        return View(actor);
-    //    }
-    //    await _service.AddAsync(actor);
-    //    return RedirectToAction(nameof(Index));
-    //}
+
 
     ////Get: Actors/Details/1
     //[AllowAnonymous]
