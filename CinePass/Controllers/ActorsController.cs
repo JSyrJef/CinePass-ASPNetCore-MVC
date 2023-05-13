@@ -1,4 +1,5 @@
 ﻿using CinePass.Data;
+using CinePass.Data.Services;
 using CinePass.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;
@@ -12,16 +13,16 @@ namespace CinePass.Controllers
     //[Authorize(Roles = UserRoles.Admin)]
     public class ActorsController : Controller
     {
-        private readonly AppDbContext _context;/*IActorsService _service;*/
+        private readonly IActorsService _service;
 
-        public ActorsController(AppDbContext context)
+        public ActorsController(IActorsService service)
         {
-            _context = context;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = _context.Actors.ToList();
+            var data = await _service.GetAll();
             return View(data);
         }
     }
