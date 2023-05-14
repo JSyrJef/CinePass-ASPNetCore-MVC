@@ -337,7 +337,7 @@ namespace CinePass.Data
 
                 //Users
                 var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-                string adminUserEmail = "admin@etickets.com";
+                string adminUserEmail = "admin@cinepass.com";
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
@@ -354,7 +354,7 @@ namespace CinePass.Data
                 }
 
 
-                string appUserEmail = "user@etickets.com";
+                string appUserEmail = "user@cinepass.com";
 
                 var appUser = await userManager.FindByEmailAsync(appUserEmail);
                 if (appUser == null)
