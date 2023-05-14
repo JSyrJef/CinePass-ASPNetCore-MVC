@@ -1,5 +1,6 @@
 ﻿using CinePass.Data;
 using CinePass.Data.Services;
+using CinePass.Data.Static;
 using CinePass.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors.Infrastructure;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CinePass.Controllers
 {
-    //[Authorize(Roles = UserRoles.Admin)]
+    [Authorize(Roles = UserRoles.Admin)]
     public class ActorsController : Controller
     {
         private readonly IActorsService _service;
@@ -20,6 +21,7 @@ namespace CinePass.Controllers
             _service = service;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var data = await _service.GetAllAsync();
@@ -44,7 +46,7 @@ namespace CinePass.Controllers
         }
 
         //Get: Actors/Details/1
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
@@ -90,5 +92,4 @@ namespace CinePass.Controllers
             return RedirectToAction(nameof(Index));
         }
     }
-    //[AllowAnonymous]
 }
