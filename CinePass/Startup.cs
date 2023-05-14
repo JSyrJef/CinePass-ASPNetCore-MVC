@@ -43,6 +43,7 @@ namespace CinePass
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+
             //Authentication and authorization
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddMemoryCache();
@@ -72,6 +73,11 @@ namespace CinePass
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
+
+            //Authentication & Authorization
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseAuthorization();
 
@@ -79,7 +85,7 @@ namespace CinePass
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Movies}/{action=Index}/{id?}");
             });
 
             //Seed database
