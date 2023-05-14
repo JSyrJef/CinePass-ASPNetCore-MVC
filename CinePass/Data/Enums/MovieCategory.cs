@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CinePass.Data.Enums
+namespace CinePass.Data
 {
     public enum MovieCategory
     {

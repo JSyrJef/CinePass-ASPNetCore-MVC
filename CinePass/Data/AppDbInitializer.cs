@@ -1,4 +1,4 @@
-﻿using CinePass.Data.Enums;
+﻿using CinePass.Data;
 using CinePass.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;

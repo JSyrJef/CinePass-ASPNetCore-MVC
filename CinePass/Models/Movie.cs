@@ -2,11 +2,12 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System;
-using CinePass.Data.Enums;
+using CinePass.Data;
+using CinePass.Data.Base;
 
 namespace CinePass.Models
 {
-    public class Movie
+    public class Movie : IEntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -19,15 +20,15 @@ namespace CinePass.Models
         public DateTime EndDate { get; set; }
         public MovieCategory MovieCategory { get; set; }
 
-        ////Relationships
+        //Relationships
         public List<Actor_Movie> Actors_Movies { get; set; }
 
-        ////Cinema
+        //Cinema
         public int CinemaId { get; set; }
         [ForeignKey("CinemaId")]
         public Cinema Cinema { get; set; }
 
-        ////Producer
+        //Producer
         public int ProducerId { get; set; }
         [ForeignKey("ProducerId")]
         public Producer Producer { get; set; }
