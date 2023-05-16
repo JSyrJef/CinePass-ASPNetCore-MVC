@@ -23,5 +23,3 @@ La aplicación web/e-commerce fue desarrollada utilizando las siguientes tecnolo
 - **C#**: Lenguaje de programación utilizado para implementar la lógica de la aplicación.
 - **HTML/CSS**: Lenguajes utilizados para el diseño y la maquetación de la interfaz de usuario.
 - **SQL Server**: Sistema de gestión de bases de datos utilizado para almacenar la información de las películas, cines, productores, actores y usuarios.
-
-Estas tecnologías fueron seleccionadas para garantizar un desarrollo eficiente y robusto de la aplicación web/e-commerce de venta de tickets de películas, cumpliendo con los requisitos establecidos y brindando una experiencia satisfactoria tanto para los usuarios como para los administradores.
