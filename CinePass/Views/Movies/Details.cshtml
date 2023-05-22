@@ -1,7 +1,7 @@
 ﻿@model Movie
 
 @{
-    ViewData["Title"] = "Movie details";
+    ViewData["Title"] = "Detalles de Pelicula";
 }
 
 <div class="row">
@@ -24,37 +24,37 @@
                     <div class="card-body">
                         <p class="card-text">@Model.Description</p>
                         <p class="card-text">
-                            <b>Cinema: </b>
+                            <b>Cine: </b>
                             <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.CinemaId">
                                 @Model.Cinema.Name
                             </a>
                         </p>
                         <p class="card-text">
-                            <b>Producer: </b>
+                            <b>Productor: </b>
                             <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.ProducerId">
                                 @Model.Producer.FullName
                             </a>
                         </p>
-                        <p class="card-text"><b>Category: </b>@Model.MovieCategory</p>
-                        <p class="card-text"><b>Start Date: </b>@Model.StartDate.ToString("dd MMM yy")</p>
-                        <p class="card-text"><b>End Date: </b>@Model.EndDate.ToString("dd MMM yy")</p>
+                        <p class="card-text"><b>Categoria: </b>@Model.MovieCategory</p>
+                        <p class="card-text"><b>Fecha de inicio: </b>@Model.StartDate.ToString("dd MMM yy")</p>
+                        <p class="card-text"><b>Valida hasta: </b>@Model.EndDate.ToString("dd MMM yy")</p>
                         <p class="card-text ">
-                            <b>Status: </b>
+                            <b>Estado: </b>
                             @if (DateTime.Now >= Model.StartDate && DateTime.Now <= Model.EndDate)
                             {
-                                <span class="badge bg-success text-white">AVAILABLE</span>
+                                <span class="badge bg-success text-white">DISPONIBLE</span>
                             }
                             else if (DateTime.Now > Model.EndDate)
                             {
-                                <span class="badge bg-danger text-white">EXPIRED</span>
+                                <span class="badge bg-danger text-white">EXPIRADA</span>
                             }
                             else
                             {
-                                <span class="badge bg-primary text-white">UPCOMING</span>
+                                <span class="badge bg-primary text-white">MUY PRONTO</span>
                             }
                         </p>
                         <p class="card-text">
-                            <b>Actors: </b>
+                            <b>Actores: </b>
                             <hr />
                             <div class="row">
                                 @foreach (var actor in Model.Actors_Movies)
@@ -74,11 +74,11 @@
                     <div class="card-footer">
                         <p class="card-text">
                             <a class="btn btn-outline-primary float-right" asp-action="Index">
-                                Back to List
+                                Regresar al listado
                             </a>
                             <a class="btn btn-success text-white  @((DateTime.Now > Model.EndDate) ? "disabled" : "")"
                                asp-controller="Orders"
-                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @Model.Price.ToString("c"))</a>
+                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Agregar al carrito (Price @Model.Price.ToString("c"))</a>
                         </p>
                     </div>
                 </div>

@@ -2,21 +2,21 @@
 @model ShoppingCartVM
 
 @{
-    ViewData["Title"] = "Shopping cart summary";
+    ViewData["Title"] = "Resumen del carrito de compras";
 }
 
 <div class="row">
     <div class="col-md-8 offset-2">
         <div class="text-center">
-            <h2>You shopping cart summary</h2>
+            <h2>Tu resumen del carrito de compras</h2>
         </div>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Selected amount</th>
-                    <th>Movie</th>
-                    <th>Price</th>
+                    <th>Cantidad seleccionada</th>
+                    <th>Película</th>
+                    <th>Precio</th>
                     <th>Subtotal</th>
                     <th></th>
                 </tr>
@@ -57,13 +57,13 @@
 
         <div class="text-right">
             <div class="btn-group">
-                @*<a class="btn btn-outline-primary" asp-action="CompleteOrder">
+                <a class="btn btn-outline-primary" asp-action="CompleteOrder">
                         Complete order
-                    </a>*@
+                    </a>
                 <div id="paypal-btn"></div>
                 <span style="padding:5px"></span>
                 <a class="btn btn-outline-success" asp-controller="Movies" asp-action="Index">
-                    Add more items
+                    Agregar mas articulos
                 </a>
             </div>
         </div>

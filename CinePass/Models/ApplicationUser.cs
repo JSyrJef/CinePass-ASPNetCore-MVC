@@ -6,7 +6,7 @@ namespace CinePass.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        [Display(Name = "Full name")]
+        [Display(Name = "Nombre Completo")]
         public string FullName { get; set; }
     }
 }

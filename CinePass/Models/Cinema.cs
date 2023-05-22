@@ -13,16 +13,16 @@ namespace CinePass.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Cinema Logo")]
-        [Required(ErrorMessage = "Cinema logo is required")]
+        [Display(Name = "Logo del cine")]
+        [Required(ErrorMessage = "El logo del cine es obligatorio")]
         public string Logo { get; set; }
 
-        [Display(Name = "Cinema Name")]
-        [Required(ErrorMessage = "Cinema name is required")]
+        [Display(Name = "Nombre del cine")]
+        [Required(ErrorMessage = "El nombre del cine es obligatorio")]
         public string Name { get; set; }
 
-        [Display(Name = "Description")]
-        [Required(ErrorMessage = "Cinema description is required")]
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "La descripción del cine es obligatoria")]
         public string Description { get; set; }
 
         //Relationships

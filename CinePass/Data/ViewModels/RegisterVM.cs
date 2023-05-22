@@ -5,22 +5,22 @@ namespace CinePass.Data.ViewModels
 {
     public class RegisterVM
     {
-        [Display(Name = "Full name")]
-        [Required(ErrorMessage = "Full name is required")]
+        [Display(Name = "Nombre completo")]
+        [Required(ErrorMessage = "El nombre completo es obligatorio")]
         public string FullName { get; set; }
 
-        [Display(Name = "Email address")]
-        [Required(ErrorMessage = "Email address is required")]
+        [Display(Name = "Dirección de correo electrónico")]
+        [Required(ErrorMessage = "La dirección de correo electrónico es obligatoria")]
         public string EmailAddress { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "La contraseña es obligatoria")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [Display(Name = "Confirm password")]
-        [Required(ErrorMessage = "Confirm password is required")]
+        [Display(Name = "Confirmar contraseña")]
+        [Required(ErrorMessage = "La confirmación de contraseña es obligatoria")]
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Passwords do not match")]
+        [Compare("Password", ErrorMessage = "Las contraseñas no coinciden")]
         public string ConfirmPassword { get; set; }
     }
 }

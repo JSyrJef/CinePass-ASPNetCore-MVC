@@ -5,8 +5,8 @@ namespace CinePass.Data.ViewModels
 {
     public class LoginVM
     {
-        [Display(Name = "Email address")]
-        [Required(ErrorMessage = "Email address is required")]
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Se Requiere Email")]
         public string EmailAddress { get; set; }
 
         [Required]

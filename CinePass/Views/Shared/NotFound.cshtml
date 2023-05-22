@@ -1,7 +1,16 @@
-﻿<div class="row">
-    <div class="col-md-6 offset-3">
-        <h1 class="text-info">You've reached the end of the internet</h1>
-        <hr />
-        <a class="btn btn-outline-success" asp-controller="Movies" asp-action="Index">Home Page</a>
+﻿<style>
+    .error-message {
+        text-align: center;
+    }
+</style>
+    <div class="container">
+        <div class="error-message">
+            <h1>404</h1>
+            <h3>Pagina no encontrada</h3>
+            <p>No se pudo encontrar la página que solicitó.</p>
+        <a class="btn btn-outline-primary" asp-controller="Movies" asp-action="Index">Volver a la pagina principal</a>
+        </div>
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+

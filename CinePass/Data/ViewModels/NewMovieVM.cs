@@ -10,45 +10,45 @@ namespace CinePass.Models
     {
         public int Id { get; set; }
 
-        [Display(Name = "Movie name")]
-        [Required(ErrorMessage = "Name is required")]
+        [Display(Name = "Nombre de la película")]
+        [Required(ErrorMessage = "El nombre es obligatorio")]
         public string Name { get; set; }
 
-        [Display(Name = "Movie description")]
-        [Required(ErrorMessage = "Description is required")]
+        [Display(Name = "Descripción de la película")]
+        [Required(ErrorMessage = "La descripción es obligatoria")]
         public string Description { get; set; }
 
-        [Display(Name = "Price in $")]
-        [Required(ErrorMessage = "Price is required")]
+        [Display(Name = "Precio en $")]
+        [Required(ErrorMessage = "El precio es obligatorio")]
         public double Price { get; set; }
 
-        [Display(Name = "Movie poster URL")]
-        [Required(ErrorMessage = "Movie poster URL is required")]
+        [Display(Name = "URL del póster de la película")]
+        [Required(ErrorMessage = "La URL del póster de la película es obligatoria")]
         public string ImageURL { get; set; }
 
-        [Display(Name = "Movie start date")]
-        [Required(ErrorMessage = "Start date is required")]
+        [Display(Name = "Fecha de inicio de la película")]
+        [Required(ErrorMessage = "La fecha de inicio es obligatoria")]
         public DateTime StartDate { get; set; }
 
-        [Display(Name = "Movie end date")]
-        [Required(ErrorMessage = "End date is required")]
+        [Display(Name = "Fecha de finalización de la película")]
+        [Required(ErrorMessage = "La fecha de finalización es obligatoria")]
         public DateTime EndDate { get; set; }
 
-        [Display(Name = "Select a category")]
-        [Required(ErrorMessage = "Movie category is required")]
+        [Display(Name = "Selecciona una categoría")]
+        [Required(ErrorMessage = "La categoría de la película es obligatoria")]
         public MovieCategory MovieCategory { get; set; }
 
-        //Relationships
-        [Display(Name = "Select actor(s)")]
-        [Required(ErrorMessage = "Movie actor(s) is required")]
+        // Relaciones
+        [Display(Name = "Selecciona actor(es)")]
+        [Required(ErrorMessage = "El(los) actor(es) de la película son obligatorios")]
         public List<int> ActorIds { get; set; }
 
-        [Display(Name = "Select a cinema")]
-        [Required(ErrorMessage = "Movie cinema is required")]
+        [Display(Name = "Selecciona un cine")]
+        [Required(ErrorMessage = "El cine de la película es obligatorio")]
         public int CinemaId { get; set; }
 
-        [Display(Name = "Select a producer")]
-        [Required(ErrorMessage = "Movie producer is required")]
+        [Display(Name = "Selecciona un productor")]
+        [Required(ErrorMessage = "El productor de la película es obligatorio")]
         public int ProducerId { get; set; }
     }
 }

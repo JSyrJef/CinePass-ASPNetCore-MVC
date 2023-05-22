@@ -2,19 +2,19 @@
 @model LoginVM;
 
 @{ 
-    ViewData["Title"] = "Log in to your account";
+    ViewData["Title"] = "Accede a tu cuenta";
 }
 
 <div class="row">
     <div class="col-md-6 offset-3">
         <p>
-            <h4>Log in to your account</h4>
+            <h4>Accede a tu cuenta</h4>
         </p>
 
         @if(TempData["Error"] != null)
             {
                 <div class="col-md-12 alert alert-danger">
-                    <span><b>Sorry!</b> - @TempData["Error"] </span>
+                    <span><b>Lo siento!</b> - @TempData["Error"] </span>
                 </div>
             }
 
@@ -35,8 +35,8 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="btn btn-outline-success float-right" type="submit" value="Log in" />
-                        <a class="btn btn-outline-secondary" asp-controller="Movies" asp-action="Index">Cancel</a>
+                        <input class="btn btn-outline-success float-right" type="submit" value="Iniciar" />
+                        <a class="btn btn-outline-secondary" asp-controller="Movies" asp-action="Index">Cancelar</a>
                     </div>
                 </form>
             </div>

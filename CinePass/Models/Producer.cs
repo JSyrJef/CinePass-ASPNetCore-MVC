@@ -12,17 +12,17 @@ namespace CinePass.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Profile Picture")]
-        [Required(ErrorMessage = "Profile Picture is required")]
+        [Display(Name = "Foto de perfil")]
+        [Required(ErrorMessage = "La foto de perfil es obligatoria")]
         public string ProfilePictureURL { get; set; }
 
-        [Display(Name = "Full Name")]
-        [Required(ErrorMessage = "Full Name is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Full Name must be between 3 and 50 chars")]
+        [Display(Name = "Nombre completo")]
+        [Required(ErrorMessage = "El nombre completo es obligatorio")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "El nombre completo debe tener entre 3 y 50 caracteres")]
         public string FullName { get; set; }
 
-        [Display(Name = "Biography")]
-        [Required(ErrorMessage = "Biography is required")]
+        [Display(Name = "Biografía")]
+        [Required(ErrorMessage = "La biografía es obligatoria")]
         public string Bio { get; set; }
 
         //Relationships
