@@ -1,0 +1,62 @@
+﻿@model List<Movie>
+
+@{
+    ViewData["Title"] = "Reporte de Peliculas";
+}
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+</style>
+
+<h1>Reporte de Películas</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>URL de la imagen</th>
+            <th>Fecha de inicio</th>
+            <th>Fecha de fin</th>
+            <th>Categoría de la película</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>@item.ImageURL</td>
+                <td>@item.StartDate</td>
+                <td>@item.EndDate</td>
+                <td>@item.MovieCategory</td>
+            </tr>
+        }
+    </tbody>
+</table>
