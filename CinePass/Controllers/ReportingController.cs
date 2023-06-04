@@ -8,6 +8,7 @@ using Rotativa.AspNetCore;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CinePass.Controllers
 {
@@ -22,28 +23,52 @@ namespace CinePass.Controllers
             _context = context;
         }
         //Producers
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = ObtenerDatos();
+            var data = await ObtenerDatos();
 
             return new ViewAsPdf("Index", data);
         }
 
-        private List<Producer> ObtenerDatos()
+        private async Task<List<Producer>> ObtenerDatos()
         {
-            return _context.Producers.ToList();
+            return await _context.Producers.ToListAsync();
         }
+        //public IActionResult Index()
+        //{
+        //    var data = ObtenerDatos();
+
+        //    return new ViewAsPdf("Index", data);
+        //}
+
+        //private List<Producer> ObtenerDatos()
+        //{
+        //    return _context.Producers.ToList();
+        //}
+
         //Movies
-        public IActionResult Index2()
+
+        public async Task<IActionResult> Index2()
         {
-            var data = ObtenerDatos2();
+            var data = await ObtenerDatos2();
 
             return new ViewAsPdf("Index2", data);
         }
 
-        private List<Movie> ObtenerDatos2()
+        private async Task<List<Movie>> ObtenerDatos2()
         {
-            return _context.Movies.ToList();
+            return await _context.Movies.ToListAsync();
         }
+        //public IActionResult Index2()
+        //{
+        //    var data = ObtenerDatos2();
+
+        //    return new ViewAsPdf("Index2", data);
+        //}
+
+        //private List<Movie> ObtenerDatos2()
+        //{
+        //    return _context.Movies.ToList();
+        //}
     }
 }

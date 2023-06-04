@@ -16,6 +16,8 @@ using CinePass.Data;
 using CinePass.Data.Services;
 using CinePass.Data.Cart;
 using CinePass.Models;
+using Rotativa.AspNetCore;
+using System.IO;
 
 namespace CinePass
 {
@@ -92,6 +94,9 @@ namespace CinePass
             //Seed database
             AppDbInitializer.Seed(app);
             AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
+
+            //string rotativaPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Rotativa");
+            //RotativaConfiguration.Setup(rotativaPath);
             Rotativa.AspNetCore.RotativaConfiguration.Setup(env.WebRootPath, "../Rotativa");
         }
     }
